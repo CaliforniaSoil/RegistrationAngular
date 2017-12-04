@@ -1,0 +1,106 @@
+<h1>{{ title }}</h1>
+
+{{ confirm }}{{ confirmname }}
+
+<form (submit)="onSubmit()" name="myForm" #myForm="ngForm">
+
+  <p>First Name</p>
+  <input 
+  type='text' 
+  name='fName' 
+  required 
+  minlength='2' 
+  maxlength='24'
+  [(ngModel)]='user.fName'
+  #fName='ngModel'><div *ngIf="!fName.valid"><span style="color:red">First name is required.</span></div>
+
+  <p>Last Name</p>
+  <input 
+  type='text'
+  name='lName'
+  required
+  minlength='2'
+  maxlength='24'
+  [(ngModel)]='user.lName'
+  #lName='ngModel'><div *ngIf="!lName.valid"><span style="color:red">Please type a valid last name.</span></div>
+
+  <p>Email Address</p>
+  <input 
+  type='email' 
+  name='email'
+  required
+  pattern='^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$'
+  [(ngModel)]='user.email'
+  #email='ngModel'><div *ngIf="!email.valid"><span style="color:red">Please type a valid email.</span></div>
+
+  <p>Password</p>
+  <input 
+  type='password' 
+  name='pw'
+  required
+  minlength='8'
+  [(ngModel)]='user.pw'
+  #pw='ngModel'><div *ngIf="!pw.valid"><span style="color:red">Please type a valid password.</span></div>
+
+  <p>Confirm Password</p>
+  <input 
+  type='password' 
+  name='confirmpw'
+  required
+  minlength='8'
+  maxlength='256'
+  [(ngModel)]='user.confirmpw'
+  #confirmpw='ngModel'><div *ngIf="user.confirmpw != user.pw"><span style="color:red">Passwords do not match.</span></div>
+
+  <p>Street Address</p>
+  <input 
+  type='text' 
+  required
+  name='street'
+  [(ngModel)]='user.street'
+  #street='ngModel'><div *ngIf="!street.valid"><span style="color:red">Please type a valid street name.</span></div>
+
+  <p>Unit/Apt #</p>
+  <input 
+  type='text' 
+  name='unit'
+  [(ngModel)]='user.unit'
+  #unit='ngModel'>
+
+  <p>City</p>
+  <input 
+  type='text' 
+  required
+  name='city'
+  [(ngModel)]='user.city'
+  #city='ngModel'><div *ngIf="!city.valid"><span style="color:red">Please type a valid city name.</span></div>
+
+  <p>State</p>
+  <select 
+  required
+  name='state'
+  [(ngModel)]='user.state'
+  #state='ngModel'>
+    <option value="washington">Washington</option>
+    <option value="oregon">Oregon</option>
+    <option value="california">California</option>
+    <option value="newyork">New York</option>
+  </select><div *ngIf="!state.valid"><span style="color:red">Please type a valid state name.</span></div>
+
+  <p>I'm feeling lucky</p>
+  <input 
+  type="radio"
+  name="lucky"
+  value="yes"
+  required
+  [(ngModel)]='user.lucky'
+  #lucky='ngModel'>Yes
+  <input
+  type="radio"
+  name="lucky"
+  value="no">No
+  <br><br>
+  <input type='submit' [disabled]='!myForm.form.valid'>
+</form>
+
+
