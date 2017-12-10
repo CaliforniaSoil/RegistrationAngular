@@ -1,0 +1,41 @@
+h1 {
+    height: 25px;
+    width: 195px;
+    background-color: lightgray;
+    border: 2px solid;
+    border-radius: 5px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 22pt;
+
+}
+h2 {
+    font-family: sans-serif;
+    font-size: 16pt;
+    color: green;
+}
+
+p {
+    font-family: sans-serif;
+}
+
+.err{
+    font-family: sans-serif;
+    color: red;
+    display: inline-block;
+    padding: 10px;
+}
+
+#submit{
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 24pt;
+    background-color: rgb(8, 134, 173);
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+

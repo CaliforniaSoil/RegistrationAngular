@@ -10,7 +10,7 @@ export class AppComponent {
   confirm = null;
   confirmname = null;
 
-  title = "Registration"
+  title = "Account Info"
   users = [];
   user = new User()
 
@@ -19,5 +19,6 @@ export class AppComponent {
     this.confirmname = this.user.fName + '.';
     this.users.push(this.user);
     this.user = new User();
+    console.log(this.users);
   }
 }
